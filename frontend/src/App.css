@@ -1,34 +1,108 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+.tape-strip {
+  position: relative;
+  width: 8rem;
+  height: 2rem;
+  background: rgba(244, 226, 133, 0.4);
+  transform: rotate(-2deg);
+  margin: 0 auto 1rem;
+  backdrop-filter: blur(4px);
+  border-radius: 2px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.receipt-tear {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(135deg, transparent 25%, #94A684 25%, #94A684 50%, transparent 50%, transparent 75%, #94A684 75%);
+  background-size: 8px 8px;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.paper-texture {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
 }
 
-.App-link {
-    color: #61dafb;
+.input-field {
+  height: 3.5rem;
+  background: rgb(245, 245, 244);
+  border: 1px solid rgb(226, 232, 240);
+  border-radius: 0.75rem;
+  padding: 0 1rem;
+  font-size: 1.125rem;
+  transition: all 0.2s;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.input-field:focus {
+  outline: none;
+  border-color: #94A684;
+  box-shadow: 0 0 0 3px rgba(148, 166, 132, 0.1);
+}
+
+.btn-primary {
+  background: #94A684;
+  color: white;
+  font-weight: 500;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s;
+  box-shadow: 0 2px 10px rgba(148, 166, 132, 0.3);
+}
+
+.btn-primary:hover {
+  background: #7D8F6D;
+  box-shadow: 0 4px 15px rgba(148, 166, 132, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: rgb(245, 245, 244);
+  color: rgb(87, 83, 78);
+  font-weight: 500;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: rgb(231, 229, 228);
+}
+
+.result-card {
+  background: white;
+  border-top: 4px solid #94A684;
+  border-bottom: 2px dashed #94A684;
+  position: relative;
+  padding: 1.5rem;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgb(245, 245, 244);
+}
+
+.result-item:last-child {
+  border-bottom: none;
+}
+
+.experience-option {
+  padding: 1rem;
+  border: 2px solid rgb(226, 232, 240);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: white;
+}
+
+.experience-option:hover {
+  border-color: #94A684;
+  background: rgba(148, 166, 132, 0.05);
+}
+
+.experience-option.selected {
+  border-color: #94A684;
+  background: rgba(148, 166, 132, 0.1);
 }
